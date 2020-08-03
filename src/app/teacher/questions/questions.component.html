@@ -1,0 +1,20 @@
+<button type="button" (click) = "goBack()" class="btn btn-success m-4">Back</button>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card m-4" *ngFor = "let question of questions; let i = index">
+        <div class="card-header">
+          <h5>{{ i+1 }}: {{ question.question }}</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Option 1: {{ question.option1 }}</p>
+          <p class="card-text">Option 2: {{ question.option2 }}</p>
+          <p class="card-text">Option 3: {{ question.option3 }}</p>
+          <p class="card-text">Option 4: {{ question.option4 }}</p>
+          <button type="button" (click) = "onClick(i + 1)" class="btn btn-info">Edit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

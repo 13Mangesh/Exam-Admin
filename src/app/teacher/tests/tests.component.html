@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <button type="button" (click) = "goBack()" class="btn btn-success m-4">Back</button>
+
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div *ngIf = "isInvalid" class="alert alert-danger" role="alert">
+          Please Select 10 Questions Only !!!
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-10">
+              <div class="form-group">
+                <!-- <label for="question">Test Name</label> -->
+                <input type="text" class="form-control" placeholder="Enter the Test name here ....." id="testName" ngModel name = "testName" required>
+              </div>
+            </div>
+            <div class="col-md-1">
+              <button type="submit" class="btn btn-success mr-1" [disabled]="!f.valid">Create</button>
+            </div>
+            <div class="col-md-1" *ngIf = "f.valid">
+              <button type="button" (click) = "cancelTest(f)" class="btn btn-danger ml-1">Cancel</button>
+            </div>
+          </div>
+        </div>
+        <div class="card m-2" *ngFor = "let question of questions; let i = index">
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-10">
+                  <h5>{{ i+1 }}: {{ question.question }}</h5>
+                </div>
+                <div class="col-md-1">
+                  <button type="button" [disabled] = "isClicked[i]" (click) = "clicked(i)" class="btn btn-primary">Add</button>
+                </div>
+                <div class="col-md-1">
+                  <button type="button" *ngIf = "isClicked[i]" (click) = "cancelClicked(i)" class="btn btn-danger">Cancel</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

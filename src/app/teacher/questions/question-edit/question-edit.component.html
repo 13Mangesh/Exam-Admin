@@ -1,0 +1,38 @@
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div *ngIf = "isInvalid" class="alert alert-danger" role="alert">
+          Please fill out all the values !!!
+        </div>
+        <div class="form-group">
+          <label for="question">Question</label>
+          <input type="text" class="form-control" id="question" [ngModel] = "question.question" name = "question" required>
+        </div>
+        <div class="form-group">
+          <label for="oprion1">Option 1</label>
+          <input type="text" class="form-control" id="option1" [ngModel] = "question.option1" name = "option1" required>
+        </div>
+        <div class="form-group">
+          <label for="option2">Option 2</label>
+          <input type="text" class="form-control" id="option2" [ngModel] = "question.option2" name = "option2" required>
+        </div>
+        <div class="form-group">
+          <label for="question">Option 3</label>
+          <input type="text" class="form-control" id="option3" [ngModel] = "question.option3" name = "option3" required>
+        </div>
+        <div class="form-group">
+          <label for="option4">Option 4</label>
+          <input type="text" class="form-control" id="option4" [ngModel] = "question.option4" name = "option4" required>
+        </div>
+        <div class="form-group">
+          <label for="option4">Right Option (please Copy and Paste from above options only)</label>
+          <input type="text" class="form-control" id="rightOption" [ngModel] = "question.rightOption" name = "rightOption" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-success" [disabled]="!f.valid">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

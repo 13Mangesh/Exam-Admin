@@ -1,0 +1,305 @@
+
+<div class="container mt-4">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <form #f = "ngForm" (ngSubmit) = "onSubmit(f)">
+        <div class="alert alert-dark" role="alert">
+          Time Left -  <countdown [config]="{ leftTime: 300, format: 'm:s' }" (event) = "handleEvent($event, f)"></countdown>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q1: {{ questions[tests[index].question1].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q1o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question1].option1" name="question1" ngModel required>
+              <label class="custom-control-label" for="q1o1">{{ questions[tests[index].question1].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q1o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question1].option2" name="question1" ngModel required>
+              <label class="custom-control-label" for="q1o2">{{ questions[tests[index].question1].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q1o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question1].option3" name="question1" ngModel required>
+              <label class="custom-control-label" for="q1o3">{{ questions[tests[index].question1].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q1o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question1].option4" name="question1" ngModel required>
+              <label class="custom-control-label" for="q1o4">{{ questions[tests[index].question1].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q2: {{ questions[tests[index].question2].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q2o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question2].option1" name="question2" ngModel required>
+              <label class="custom-control-label" for="q2o1">{{ questions[tests[index].question2].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q2o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question2].option2" name="question2" ngModel required>
+              <label class="custom-control-label" for="q2o2">{{ questions[tests[index].question2].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q2o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question2].option3" name="question2" ngModel required>
+              <label class="custom-control-label" for="q2o3">{{ questions[tests[index].question2].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q2o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question2].option4" name="question2" ngModel required>
+              <label class="custom-control-label" for="q2o4">{{ questions[tests[index].question2].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q3: {{ questions[tests[index].question3].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q3o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question3].option1" name="question3" ngModel required>
+              <label class="custom-control-label" for="q3o1">{{ questions[tests[index].question3].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q3o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question3].option2" name="question3" ngModel required>
+              <label class="custom-control-label" for="q3o2">{{ questions[tests[index].question3].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q3o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question3].option3" name="question3" ngModel required>
+              <label class="custom-control-label" for="q3o3">{{ questions[tests[index].question3].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q3o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question3].option4" name="question3" ngModel required>
+              <label class="custom-control-label" for="q3o4">{{ questions[tests[index].question3].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q4: {{ questions[tests[index].question4].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q4o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question4].option1" name="question4" ngModel required>
+              <label class="custom-control-label" for="q4o1">{{ questions[tests[index].question4].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q4o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question4].option2" name="question4" ngModel required>
+              <label class="custom-control-label" for="q4o2">{{ questions[tests[index].question4].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q4o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question4].option3" name="question4" ngModel required>
+              <label class="custom-control-label" for="q4o3">{{ questions[tests[index].question4].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q4o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question4].option4" name="question4" ngModel required>
+              <label class="custom-control-label" for="q4o4">{{ questions[tests[index].question4].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q5: {{ questions[tests[index].question5].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q5o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question5].option1" name="question5" ngModel required>
+              <label class="custom-control-label" for="q5o1">{{ questions[tests[index].question5].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q5o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question5].option2" name="question5" ngModel required>
+              <label class="custom-control-label" for="q5o2">{{ questions[tests[index].question5].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q5o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question5].option3" name="question5" ngModel required>
+              <label class="custom-control-label" for="q5o3">{{ questions[tests[index].question5].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q5o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question5].option4" name="question5" ngModel required>
+              <label class="custom-control-label" for="q5o4">{{ questions[tests[index].question5].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q6: {{ questions[tests[index].question6].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q6o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question6].option1" name="question6" ngModel required>
+              <label class="custom-control-label" for="q6o1">{{ questions[tests[index].question6].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q6o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question6].option2" name="question6" ngModel required>
+              <label class="custom-control-label" for="q6o2">{{ questions[tests[index].question6].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q6o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question6].option3" name="question6" ngModel required>
+              <label class="custom-control-label" for="q6o3">{{ questions[tests[index].question6].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q6o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question6].option4" name="question6" ngModel required>
+              <label class="custom-control-label" for="q6o4">{{ questions[tests[index].question6].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q7: {{ questions[tests[index].question7].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q7o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question7].option1" name="question7" ngModel required>
+              <label class="custom-control-label" for="q7o1">{{ questions[tests[index].question7].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q7o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question7].option2" name="question7" ngModel required>
+              <label class="custom-control-label" for="q7o2">{{ questions[tests[index].question7].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q7o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question7].option3" name="question7" ngModel required>
+              <label class="custom-control-label" for="q7o3">{{ questions[tests[index].question7].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q7o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question7].option4" name="question7" ngModel required>
+              <label class="custom-control-label" for="q7o4">{{ questions[tests[index].question7].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q8: {{ questions[tests[index].question8].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q8o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question8].option1" name="question8" ngModel required>
+              <label class="custom-control-label" for="q8o1">{{ questions[tests[index].question8].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q8o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question8].option2" name="question8" ngModel required>
+              <label class="custom-control-label" for="q8o2">{{ questions[tests[index].question8].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q8o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question8].option3" name="question8" ngModel required>
+              <label class="custom-control-label" for="q8o3">{{ questions[tests[index].question8].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q8o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question8].option4" name="question8" ngModel required>
+              <label class="custom-control-label" for="q8o4">{{ questions[tests[index].question8].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q9: {{ questions[tests[index].question9].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q9o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question9].option1" name="question9" ngModel required>
+              <label class="custom-control-label" for="q9o1">{{ questions[tests[index].question9].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q9o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question9].option2" name="question9" ngModel required>
+              <label class="custom-control-label" for="q9o2">{{ questions[tests[index].question9].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q9o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question9].option3" name="question9" ngModel required>
+              <label class="custom-control-label" for="q9o3">{{ questions[tests[index].question9].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q9o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question9].option4" name="question9" ngModel required>
+              <label class="custom-control-label" for="q9o4">{{ questions[tests[index].question9].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div class="group-gap">
+					<h5 class="mb-3">Q10: {{ questions[tests[index].question10].question }}</h5>
+					<div class="d-block my-3">
+
+						<div class="custom-control custom-radio">
+							<input id="q10o1" type="radio" class="custom-control-input" [value] ="questions[tests[index].question10].option1" name="question10" ngModel required>
+              <label class="custom-control-label" for="q10o1">{{ questions[tests[index].question10].option1 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q10o2" type="radio" class="custom-control-input" [value]="questions[tests[index].question10].option2" name="question10" ngModel required>
+              <label class="custom-control-label" for="q10o2">{{ questions[tests[index].question10].option2 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q10o3" type="radio" class="custom-control-input" [value]="questions[tests[index].question10].option3" name="question10" ngModel required>
+              <label class="custom-control-label" for="q10o3">{{ questions[tests[index].question10].option3 }}</label>
+            </div>
+
+            <div class="custom-control custom-radio">
+              <input id="q10o4" type="radio" class="custom-control-input" [value]="questions[tests[index].question10].option4" name="question10" ngModel required>
+              <label class="custom-control-label" for="q10o4">{{ questions[tests[index].question10].option4 }}</label>
+            </div>
+
+            <div class="invalid-feedback" *ngIf="isSubmitted && f.invalid">
+              <p>Please select either value</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="btn btn-success mt-4" [disabled]="!f.valid">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <div class="container">
+        <div class="card mt-4" *ngFor = "let test of tests; let i = index">
+          <div class="card-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-9">
+                  <h5>{{ i+1 }}: {{ test.name }}</h5>
+                </div>
+                <div class="col-md-3">
+                  <button type="button" (click) = "giveTest(i)" class="btn btn-primary">Give Test</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card mt-4">
+        <div class="card-header">
+          {{ student.year }}
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{ student.name }}</h5>
+          <p class="card-text">Roll Number: {{ student.rollNumber }}</p>
+          <p class="card-text">Name of the last Test: {{ student.lastTestName }}</p>
+          <p class="card-text">Score of the last Test: {{ student.lastTestScore }}</p>
+          <p class="card-text">Feedback on the last Test: {{ student.lastTestFeedback}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
