@@ -23,7 +23,7 @@
     "bootstrap": "^4.4.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "mongodb": "^3.5.5",
     "mongoose": "^5.9.7",
     "ngx-countdown": "^9.0.0",
